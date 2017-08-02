@@ -4,39 +4,75 @@
     <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
     <script src="script.js"></script>
 
-    <title>LET'S START</title>
+    <title>Determine Your Fate</title>
 
 </head>
 
 <body>
     <a-scene>
 
-
         <a-assets>
             <img id="start_page_image" src="startpagebg.png">
-            <img id="scene1_bank_image" src="banklobby.jpg">
-            <img id="background_tangled_scene1" src="forest.jpg">
-            <img id="newBackground" src="tree.jpg">
-            <img id="newBackground_2" src="road.jpg">
+            <img id="background_robbery_intro" src="banklobby.jpg">
+
+
+            <img id="background_tangled_intro" src="forest.jpg">
+            <img id="background_tangled_scene1" src="tree.jpg">
+            <img id="background_tangled_scene2" src="road.jpg">
+
         </a-assets>
-        //first page of project...this is where the user chooses which sccenario to go to
+        //first page of project...this is where the user chooses which scenario to go to
+
         <a-entity visible=true id="start_page"> //entity groups everything together to make change simpler
             <a-sky id="sky" src="#start_page_image"></a-sky>
+
             <a-text id="intro-message" value="Welcome to your story! It's the choice you 
             make that determines your fate. Good luck! Choose a world." color="black" position="-1.9 3 -3"></a-text>
 
-            <a-sphere onClick="kidFriendly()" color="yellow" position="-0.7 2 -3" radius=".4"></a-sphere>
-            <a-sphere id="gotobankscene" onClick="forGrownups()" color="yellow" position="0.7 2 -3" radius=".4"></a-sphere>
+            //kid friendly is the sphere to click on for the tangled scenario
+
+            <a-sphere onClick="kidFriendly()" color="yellow" position="-0.7 2 -3" radius=".5"></a-sphere>
+
+            //for grownups is the sphere to click on for the bank robbery
+
+            <a-sphere onClick="forGrownups()" color="yellow" position="0.7 2 -3" radius=".5"></a-sphere>
         </a-entity>
 
-        <a-entity visible=false id="scene2_tangled">
-            <a-sky id="sky_1" src="#background_tangled_scene1"></a-sky>
-            <a-text id="intro-message_tangled" value="TANGLED STORYLINE!" color="white" position="-1.9 3 -3"></a-text>
-            <a-sphere onclick="optionOneSceneTwo()" id="left" color="green" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
-            <a-sphere onclick="optionTwoSceneTwo()" id="right" color="green" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
+
+
+
+        <a-entity visible=false id="intro_tangled">
+
+            <a-sky id="tangled_sky_1" src="#background_tangled_intro"></a-sky>
+
+            <a-text id="intro-message_tangled" value="Your name is Rapunzel. You are 17 years old. Your mom has never let you out of the tower. It's your birthday, and you want to go to see the lights." color="white" position="-1.9 3 -3"></a-text>
+            //tangled intro is the first page of the tangled scenario...it is where they will be given background info and choose their fate for the first time
+
+            <a-sphere id="green_left" color="green" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
+            <a-sphere onClick="tangledScene1Right()" id="green_right" color="green" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
         </a-entity>
 
-        <a-entity visible=true id="scene3_tangled"></a-entity>
+
+
+
+        <a-entity visible=false id="intro_robbery">
+
+            <a-sky id="robbery_sky_1" src="#background_robbery_intro"></a-sky>
+
+            <a-text id="intro-message_robbery" value="You and 3 friends are wanted felons, you need enough money to leave the country and start a new life. Your job is to get through without getting caught. Good luck!" color="white" position="-1.9 3 -3"></a-text>
+
+            <a-sphere id="red_left" color="red" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
+            <a-sphere id="red_right" color="red" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
+        </a-entity>
+
+        <a-entity visible=false id="scene1_tangled">
+            <a-sky id="tangled_sky_3" src="#background_tangled_scene1"  ></a-sky>
+            
+        </a-entity>
+        
 
 
 
@@ -44,11 +80,9 @@
 
 
 
-
-
-        <a-camera>
-            <a-cursor></a-cursor>
-        </a-camera>
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
 
     </a-scene>
 </body>

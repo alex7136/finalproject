@@ -1,37 +1,30 @@
 function kidFriendly() {
 
-    var initialForest = document.getElementById("sky_1")
-    initialForest.setAttribute('src', "#background_tangled_scene1")
+    // var initialForest = document.getElementById("tangled_sky_1")
+    // initialForest.setAttribute('src', "#background_tangled_intro")
 
-    var scene = document.getElementById('start_page')
-    scene.setAttribute('visible', 'false')
+    var tangled_scene = document.getElementById('start_page');
+    tangled_scene.setAttribute('visible', 'false');
 
-    var scene2 = document.getElementById('scene2_tangled')
-    scene2.setAttribute('visible', 'true')
+    var tangled_scene2 = document.getElementById('intro_tangled');
+    tangled_scene2.setAttribute('visible', 'true');
 
-}
-
-function optionOneSceneTwo() {
-    // var background = document.getElementById("sky_1");
-    // background.setAttribute('src', "#newBackground");
-    // background.setAttribute('visible', 'false')
-}
-
-function optionTwoSceneTwo() {
-    // var background_2 = document.getElementById("sky_1");
-    // background_2.setAttribute('src', "#newBackground_2");
-    // background_2.setAttribute('visible', 'false')
 }
 
 
 function forGrownups() {
+    var robbery_scene = document.getElementById('start_page');
+    robbery_scene.setAttribute('visible', 'false');
 
-    var changetobankscene = document.getElementById('sky')
-    changetobankscene.setAttribute('src', '#scene1_bank_image')
+    var robbery_scene2 = document.getElementById('intro_robbery');
+    robbery_scene2.setAttribute('visible', 'true');
 
-    var bankintromessage = document.getElementById('intro-message')
-    bankintromessage.setAttribute('value', 'You and 3 friends are wanted felons, you need enough money to leave the country and start a new life. Your job is to get through without getting caught. Good luck!')
+}
 
+function tangledScene1Right(){
+    var tangled_scene1 = document.getElementById('intro_tangled');
+    tangled_scene1.setAttribute('visible', 'true');
 
-
+    var tangled_scene3 = document.getElementById('scene1_tangled');
+    tangled_scene3.setAttribute('visible', 'false');
 }
