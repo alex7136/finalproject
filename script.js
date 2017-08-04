@@ -2,17 +2,21 @@ function kidFriendly() {
 
     var tangled_scene = document.getElementById('start_page');
     tangled_scene.setAttribute('visible', 'false');
+    tangled_scene.setAttribute('position', '-2 30 -0');
 
     var tangled_scene1 = document.getElementById('intro_tangled');
+    tangled_scene1.setAttribute('position', '-0.7 2 -3')
     tangled_scene1.setAttribute('visible', 'true');
 
-    var reset = document.getElementById('yellow_right');
-    reset.setAttribute('onClick', ' ');
-    reset.setAttribute('position', '-1 2.2 6.323');
 
-    var reset_2 = document.getElementById('yellow_left');
-    reset_2.setAttribute('onClick', ' ');
-    reset_2.setAttribute('position', '-1 2.2 6.323  ');
+
+    // var reset = document.getElementById('yellow_right');
+    // reset.setAttribute('onClick', '');
+    // reset.setAttribute('position', '-2 30 -0');
+
+    // var reset_2 = document.getElementById('yellow_left');
+    // reset_2.setAttribute('onClick', ' ');
+    // reset_2.setAttribute('position', '-2 30 -0');
 }
 
 function green_left_tangled() {
