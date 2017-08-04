@@ -5,10 +5,6 @@ function kidFriendly() {
     tangled_scene.setAttribute('position', '-2 30 -0');
 
     var tangled_scene1 = document.getElementById('intro_tangled');
-    var sphere1 = document.getElementById('green_left')
-    var sphere2= document.getElementById('green_right')
-    sphere1.setAttribute("position", "-2 30 -2")
-    sphere2.setAttribute("position", "1 30 -2")
     tangled_scene1.setAttribute('position', '-0.7 2 -3')
     tangled_scene1.setAttribute('visible', 'true');
 
