@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 
 <head>
     <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
@@ -87,4 +87,314 @@
     </a-scene>
 </body>
 
+</html> -->
+
+
+
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="script.js"></script>
+
+    <title>Determine Your Fate</title>
+
+</head>
+
+<body>
+    <a-scene>
+
+        <a-assets>
+            <!--bank pictures-->
+            <img id="start_page_image" src="startpagebg.png">
+            <img id="background_robbery_intro" src="bank.jpg">
+            
+            <!--tangled pictures-->
+            <img id="background_tangled_intro" src="forest.jpg">
+            <img id="background_tangled_scene1" src="tree.jpg">
+            <img id="background_tangled_scene2" src="road.jpg">
+            <img id="background_tangled_scene3" src="rapunzelstower.jpg">
+            <img id="background_tangled_scene4" src="yes.jpeg">
+            <img id="rapunzel_pascal" src="r_p.jpg">
+            
+            <!--random pictures-->
+            
+            <img id="no" src="no.jpeg">
+            <img id="bankE" src="bankE.jpg">
+            <img id="smiley" src="smiley.jpg">
+
+
+        </a-assets>
+
+        <a-entity visible=true id="start_page">
+            <a-sky src="#start_page_image"></a-sky>
+
+            <a-text id="intro-message" value="Welcome to your story! It's the choice you 
+            make that determines your fate. Good luck! Choose a world. Click the left sphere if you are 16 or younger. Click the right sphere if you are 17 and above." color="black" position="-1.9 3 -3"></a-text>
+
+            <!--//kid friendly is the sphere to click on for the tangled scenario-->
+
+            <a-sphere onClick="kidFriendly()" id="yellow_left"  src="#rapunzel_pascal" rotation="0 -60 0" position="-0.7 2 -3" radius=".5"></a-sphere>
+            <!--//for grownups is the sphere to click on for the bank robbery-->
+
+            <a-sphere onClick="forGrownups()" id="yellow_right" src="#bankE" rotation="0 -90 0" position="0.7 2 -3" radius=".5"></a-sphere>
+        </a-entity>
+
+
+
+
+        <!--TANGLED STORYLINE-->
+        <a-entity visible=false id="intro_tangled" position="-2 30 -0">
+
+            <a-sky src="#background_tangled_intro"></a-sky>
+
+            <a-text id="intro-message_tangled" value="Your name is Rapunzel. You are 17 years old. Your mom has never let you out of the tower. It's your birthday, and you want to go to see the lights. Click any of the bubbles to continue." color="white" position="-1.9 3 -3"></a-text>
+            <!--//tangled intro is the first page of the tangled scenario...it is where they will be given background info and choose their fate for the first time-->
+
+            <a-sphere onClick="green_left_tangled()" id="green_left" src="#smiley" rotation="0 -80 0" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
+            <a-sphere onClick="green_right_tangled()" id="green_right" src="#smiley" rotation="0 -100 0" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
+        </a-entity>
+
+        <a-entity visible=false id="scene1_tangled" position="-2 30 -0">
+            <a-sky src="#background_tangled_scene1"></a-sky>
+
+            <a-text id="scene1-message_tangled" value="A strange man comes crashing into your window. Do you let him stay? (Left - Yes , Right - No)" color="white" position="-1.9 3 -3"></a-text>
+
+            <a-sphere id="blue_left1" onClick="blue_left_tangled()" color="blue" src="#background_tangled_scene4" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
+            <a-sphere id="blue_right1" onClick="blue_right_tangled()" color="blue" src="#no" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
+        </a-entity>
+
+
+        <a-entity visible=false id="scene2_tangled" position="-2 30 -0">
+            <a-sky src="#background_tangled_scene2"></a-sky>
+            <!--//we need to name this scene 2A-->
+            <a-text id="scene2-message_tangled" value="You let him stay but he is a little bit frightening. What do you do? (L) Do you leave him on the floor? (R) Or do you hide him in your closet? " color="white" position="-1.9 3 -3"></a-text>
+            <!---->
+            <a-sphere id="purple_left"  color="purple" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
+            <!--the right sphere is a dead end -->
+            <a-sphere id="purple_right"  onClick="purple_right_tangled()" color="purple" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
+        </a-entity>
+
+        <a-entity visible=false id="scene3_tangled" position="-2 30 -0">
+            <a-sky src="#background_tangled_scene3"></a-sky>
+
+            <a-text id="scene3-message_tangled" value="Your mom comes home and doesn't suspect anything. She leaves again. You discover that the guy you hid in the closet is in the run. (L) Do you blackmail him to see the lanterns? (R) Or do you turn him to the police?" color="black" position="-1.9 3 -3"></a-text>
+
+            <a-sphere id="orange_left"  color="orange" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
+            <a-sphere id="orange_right"  color="orange" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
+        </a-entity>
+        
+        <!--<a-entity visible=false id="scene4_tangled">-->
+        <!--    <a-sky src="#background_tangled_scene4"></a-sky>-->
+
+        <!--    <a-text id="scene4-message_tangled" value="ENETER WORDS HERE" color="white" position="-1.9 3 -3"></a-text>-->
+
+        <!--    <a-sphere id="grey_left" onClick="grey_left_tangled()" color="grey" position="-1 2.2 -4.323 " radius=".5"></a-sphere>-->
+        <!--    <a-sphere id="grey_right" onClick="grey_right_tangled()" color="grey" position="1 2.2 -4.323 " radius=".5"></a-sphere>-->
+
+        <!--</a-entity>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--FAITH STARTS HERE-->
+        <!--FAITH STARTS HERE-->
+        <!--FAITH STARTS HERE-->
+
+        <a-entity visible=false id="intro_robbery">
+
+            <a-sky src="#background_robbery_intro"></a-sky>
+
+            <a-text id="intro-message_robbery" value="You and 3 friends are wanted felons, you need enough money to leave the country and start a new life. Your job is to get through without getting caught. Good luck!" color="white" position="-1.9 3 -3"></a-text>
+
+            <a-sphere id="red_left" onClick="red_left_robbery()" color="red" position="-1 2.2 -4.323 " radius=".5"></a-sphere>
+            <a-sphere id="red_right" onClick="red_right_robbery()" color="red" position="1 2.2 -4.323 " radius=".5"></a-sphere>
+
+        </a-entity>
+
+        <!--<a-entity visible=false id="scene1_robbery">-->
+
+        <!--    <a-sky  src=""></a-sky>-->
+
+        <!--    <a-text id="scene2_message_robbery" value="[Las Vegas, Nevada] You have arrived near the bank. Do you go in with a mask on or a mask off?" color="white" position="-1.9 3 -3"></a-text>-->
+
+        <!--    <a-sphere id="white_left" onClick="white_left_robbery()" color="white" value= "Mask On" position="-1 2.2 -4.323" radius=".5"></a-sphere>-->
+        <!--    <a-sphere id="white_right" onClick="white_right_robbery()" color="white" value= "Mask Off" position="1 2.2 -4.323" radius=".5"></a-sphere>-->
+
+        <!--</a-entity>-->
+
+
+
+        <!--<a-entity visible=false id="scene2_robbery">-->
+
+        <!--    <a-sky  src="#background_robbery_intro"></a-sky>-->
+
+        <!--    <a-text id="scene2_message" value="Now you're being shot at. Will you shoot back or dodge the bullets?" color="white" position="-1.9 3 -3"></a-text>-->
+
+        <!--    <a-sphere id="cyan_left" onclick="cyan_left_robbery" color="red" value="Shoot Back" position="-1 2.2 -4.323 " radius=".5"></a-sphere>-->
+        <!--    <a-sphere id="cyan_right" onclick="cyan_right_robbery" color="red" value="Dodge the Bullet" position="1 2.2 -4.323 " radius=".5"></a-sphere>-->
+
+        </a-entity>
+
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+
+    </a-scene>
+</body>
+
 </html>
+Add Comment Collapse
+
+
+
+marilexia [10:59 PM]  
+added this Java snippet: JAVA VERSION WHICH NEEDS POSITIONING 
+function kidFriendly() {
+
+    var tangled_scene = document.getElementById('start_page');
+    tangled_scene.setAttribute('visible', 'false');
+
+    var tangled_scene1 = document.getElementById('intro_tangled');
+    tangled_scene1.setAttribute('visible', 'true');
+
+    var reset = document.getElementById('yellow_right');
+    reset.setAttribute('onClick', ' ');
+    reset.setAttribute('position', '-1 2.2 6.323');
+
+    var reset_2 = document.getElementById('yellow_left');
+    reset_2.setAttribute('onClick', ' ');
+    reset_2.setAttribute('position', '-1 2.2 6.323  ');
+}
+
+function green_left_tangled() {
+
+    var tangled_scene2 = document.getElementById('intro_tangled');
+    tangled_scene2.setAttribute('position', "-4 3 3")
+    tangled_scene2.setAttribute('visible', 'false');
+
+    var tangled_scene3 = document.getElementById('scene1_tangled');
+    tangled_scene3.setAttribute('position', "-4 3 3")
+    tangled_scene3.setAttribute('visible', 'true');
+
+    var reset_4 = document.getElementById('green_left');
+    reset_4.setAttribute('position', '1 2.2 6.323');
+
+    var reset_5 = document.getElementById('green_right');
+    reset_5.setAttribute('position', '1 2.2 6.323  ');
+}
+
+function green_right_tangled() {
+
+    var tangled_scene2 = document.getElementById('intro_tangled');
+    tangled_scene2.setAttribute('position', "-4 3 3")
+    tangled_scene2.setAttribute('visible', 'false');
+
+    var tangled_scene3 = document.getElementById('scene1_tangled');
+    tangled_scene3.setAttribute('position', '5 2 0')
+    tangled_scene3.setAttribute('visible', 'true');
+
+    var reset_6 = document.getElementById('green_left');
+    reset_6.setAttribute('onClick', ' ');
+    reset_6.setAttribute('position', '1 2.2 6.323');
+
+    var reset_7 = document.getElementById('green_right');
+    reset_7.setAttribute('onClick', ' ');
+    reset_7.setAttribute('position', '1 2.2 6.323');
+
+}
+
+function blue_left_tangled() {
+
+    var tangled_scene2 = document.getElementById('intro_tangled');
+    tangled_scene2.setAttribute('visible', 'false');
+    tangled_scene2.setAttribute('position', '5 0 0');
+
+    var tangled_scene3 = document.getElementById('scene2_tangled');
+    tangled_scene3.setAttribute('position', '6 0 3')
+    tangled_scene3.setAttribute('visible', 'true');
+
+    var reset_8 = document.getElementById('blue_left1');
+    reset_8.setAttribute('onClick', ' ');
+    reset_8.setAttribute('position', '1 2.2 6.323');
+
+    var reset_9 = document.getElementById('blue_right1');
+    reset_9.setAttribute('onClick', ' ');
+    reset_9.setAttribute('position', '1 2.2 6.323');
+
+}
+
+function purple_right_tangled(){
+    
+    var tangled_scene4 = document.getElementById('scene2_tangled');
+    tangled_scene4.setAttribute('position', '8,0 0');
+    tangled_scene4.setAttribute('visible', 'false');
+
+    var tangled_scene5 = document.getElementById('scene3_tangled');
+    tangled_scene5.setAttribute('position', '5 -3 0');
+    tangled_scene5.setAttribute('visible', 'true');
+    
+    var reset_10 = document.getElementById('purple_left');
+    reset_10.setAttribute('onClick', ' ');
+    reset_10.setAttribute('position', '1 2.2 6.323');
+
+    var reset_11 = document.getElementById('purple_right');
+    reset_11.setAttribute('onClick', ' ');
+    reset_11.setAttribute('position', '1 2.2 6.323  ');
+}
+
+
+
+
+
+
+
+//ROBBERY FUNCTIONS
+
+function forGrownups() {
+    var robbery_scene = document.getElementById('start_page');
+    robbery_scene.setAttribute('visible', 'false');
+
+    var robbery_scene2 = document.getElementById('intro_robbery');
+    robbery_scene2.setAttribute('visible', 'true');
+
+    var reset_1 = document.getElementById('yellow_left');
+    reset_1.setAttribute('onclick', ' ');
+
+    var reset_3 = document.getElementById('yellow_right');
+    reset_3.setAttribute('onclick', ' ');
+}
+
+
+// function white_left_robbery() {
+//     var robbery_scene_masks = document.getElementById('white_left')
+//     robbery_scene_masks.setAttribute('visible', 'true');
+
+//     var mask_on_option = document.getElementById('white_left')
+//     mask_on_option.setAttribute('onclick', ' ')
+
+//     var mask_off_option = document.getElementById('white_right')
+//     mask_off_option.setAttribute('onclick', '')
+// }
+Add Comment Collapse
+
+
+
+
