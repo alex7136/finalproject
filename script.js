@@ -65,6 +65,10 @@ function blue_left_tangled() {
     tangled_scene6.setAttribute('visible', 'false');
     tangled_scene6.setAttribute('position', '-2 30 -0');
 
+    var tangled_scene2 = document.getElementById('scene1_tangled');
+    tangled_scene2.setAttribute('visible', 'false');
+    tangled_scene2.setAttribute('position', "-2 30 -0")
+
     var tangled_scene7 = document.getElementById('scene2_tangled');
     tangled_scene7.setAttribute('position', '-0.7 2 -3')
     tangled_scene7.setAttribute('visible', 'true');
