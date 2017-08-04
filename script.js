@@ -23,11 +23,11 @@ function green_left_tangled() {
 
     var tangled_scene2 = document.getElementById('intro_tangled');
     tangled_scene2.setAttribute('visible', 'false');
-    tangled_scene2.setAttribute('position', "-2 30 -0")
+    tangled_scene2.setAttribute('position', "-2 -30 -4")
 
 
     var tangled_scene3 = document.getElementById('scene1_tangled');
-    tangled_scene3.setAttribute('position', "-0.7 2 -3")
+    tangled_scene3.setAttribute('position', "-0.7 -30 -4)
     tangled_scene3.setAttribute('visible', 'true');
 
     // var reset_4 = document.getElementById('green_left');
