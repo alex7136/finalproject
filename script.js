@@ -90,24 +90,28 @@ function blue_left_tangled() {
 
 }
 
-// function purple_right_tangled(){
+function purple_right_tangled(){
     
-//     var tangled_scene8 = document.getElementById('scene2_tangled');
-//     tangled_scene8.setAttribute('position', '-2 30 -0');
-//     tangled_scene8.setAttribute('visible', 'false');
+    var tangled_scene2 = document.getElementById('scene1_tangled');
+    tangled_scene2.setAttribute('visible', 'false');
+    tangled_scene2.setAttribute('position', "-2 30 -0")
 
-//     var tangled_scene9 = document.getElementById('scene3_tangled');
-//     tangled_scene9.setAttribute('position', '-0.7 2 -3');
-//     tangled_scene9.setAttribute('visible', 'true');
+    var tangled_scene8 = document.getElementById('scene2_tangled');
+    tangled_scene8.setAttribute('position', '-2 30 -0');
+    tangled_scene8.setAttribute('visible', 'false');
+
+    var tangled_scene9 = document.getElementById('scene3_tangled');
+    tangled_scene9.setAttribute('position', '-0.7 2 -3');
+    tangled_scene9.setAttribute('visible', 'true');
     
-//     // var reset_10 = document.getElementById('purple_left');
-//     // reset_10.setAttribute('onClick', ' ');
-//     // reset_10.setAttribute('position', '-2 30 -0');
+    // var reset_10 = document.getElementById('purple_left');
+    // reset_10.setAttribute('onClick', ' ');
+    // reset_10.setAttribute('position', '-2 30 -0');
 
-//     // var reset_11 = document.getElementById('purple_right');
-//     // reset_11.setAttribute('onClick', ' ');
-//     // reset_11.setAttribute('position', '-2 30 -0 ');
-// }
+    // var reset_11 = document.getElementById('purple_right');
+    // reset_11.setAttribute('onClick', ' ');
+    // reset_11.setAttribute('position', '-2 30 -0 ');
+}
 
 
 
