@@ -122,6 +122,8 @@
             <img id="no" src="no.jpeg">
             <img id="bankE" src="bankE.jpg">
             <img id="smiley" src="smiley.jpg">
+            <img id="yes2" src="yes2.jpg">
+            <img id="no2" src="no.jpg">
 
 
         </a-assets>
@@ -161,8 +163,8 @@
 
             <a-text id="scene1-message_tangled" value="A strange man comes crashing into your window. Do you let him stay? (Left - Yes , Right - No)" color="white" position="-1.9 3 -3"></a-text>
 
-            <a-sphere id="blue_left1" onClick="blue_left_tangled()" color="blue" src="#background_tangled_scene4" position="-1 1 -4.323 " radius=".5"></a-sphere>
-            <a-sphere id="blue_right1" onClick="blue_right_tangled()" color="blue" src="#no" position="1 1 -4.323 " radius=".5"></a-sphere>
+            <a-sphere id="blue_left1" onClick="blue_left_tangled()"  src="#yes2" position="-1 1 -4.323 " radius=".5"></a-sphere>
+            <a-sphere id="blue_right1" onClick="blue_right_tangled()" src="#no2" position="1 1 -4.323 " radius=".5"></a-sphere>
 
         </a-entity>
 
@@ -176,7 +178,7 @@
             <!--the right sphere is a dead end -->
             <a-sphere id="purple_right"  onClick="purple_right_tangled()" color="purple" position="1 1 -4.323 " radius=".5"></a-sphere>
 
-        </a-entity>
+       </a-entity>
 
         <a-entity visible=false id="scene3_tangled" position="-2 30 -0">
             <a-sky src="#background_tangled_scene3"></a-sky>
